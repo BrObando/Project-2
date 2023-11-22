@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
 const vgSchema = new Schema(
     {
     title: {type: String},
@@ -15,4 +14,5 @@ const vgSchema = new Schema(
     ESRB: {type: String, enum: ["eC", "E", "E+10", "T", "M", "Ao (Adults Only 18+)", "RP (Rating Pending)"], required: true},
     }
 )
-
+const Game = mongoose.model('Game', vgSchema);
+module.exports = Game;

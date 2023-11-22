@@ -4,9 +4,11 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+require('dotenv').config()
+require('./config/database')
+
 const indexRouter = require('./routes/index');
 const videogameRouter = require('./routes/videogames-router');
-
 const app = express();
 
 // view engine setup
@@ -18,9 +20,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use('/', indexRouter);
-app.use('/videogames-router', videogameRouter);
+app.use('/videogames', videogameRouter);
 
 // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
