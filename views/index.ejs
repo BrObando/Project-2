@@ -1,21 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <title>JoystickJury</title>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<%- include('./partials/header') %>
 
+<h1>JoystickJury</h1>
+<body>
 
-<nav class="navbar">
-    <div class="search-bar">
-        <form action="/search" method="GET">
-            <input type="text" name="query" placeholder="Search games...">
-            <button type="submit">Search</button>
-        </form>
-    </div>
-</nav>
+<ul>
+  <h3>NAV</h3>
+  <li><a href="#news">News</a></li>
+  <li><a href="/videogames">Reviews</a></li>
+  <li><a href="#features">Features</a></li>
+  <li><a href="#videos">Videos</a></li>
+</ul>
+</body>
+<%- include('./partials/footer') %>
