@@ -16,3 +16,4 @@ const vgSchema = new Schema(
     }
 )
 
+module.exports = vg;
