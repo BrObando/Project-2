@@ -16,3 +16,6 @@ const vgSchema = new Schema(
     }
 )
 
+const Game = mongoose.model('Game', vgSchema);
+
+module.exports = Game;
