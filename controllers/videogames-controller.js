@@ -25,7 +25,7 @@ async function create(req, res) {
         res.redirect('/videogames');
     } catch (err) {
         console.error(err);
-        res.render('videogagames/new', { title: "New Game", errorMsg: err.message });
+        res.render('videogames/new', { title: "New Game", errorMsg: err.message });
     }
 }
 
