@@ -9,8 +9,6 @@ module.exports = {
 }
 
 
-
-
 async function index(req, res) {
     try {
         const allGames = await Game.find();
