@@ -1,13 +1,24 @@
 const Blog = require('../models/blog-model');
 
 module.exports = {
+    blogIndex,
     newBlog,
     createBlog,
     showBlog,
 };
 
+async function blogIndex(req, res) {
+    try {
+        const allBlogs = await Blog.find();
+        res.render('blogs/index', { title: "All Games", games: allGames });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server Error');
+    }
+}
+
 function newBlog(req, res) {
-    res.render('blogs/new');
+    res.render('blogs/new', {title: "New Blog", errorMsg: ''});
 }
 
 async function createBlog(req, res) {
