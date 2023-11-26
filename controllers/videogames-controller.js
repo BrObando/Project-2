@@ -1,5 +1,6 @@
 const Game = require('../models/videogame-model');
 
+
 module.exports = {
     index,
     create,

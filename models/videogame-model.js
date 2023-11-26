@@ -3,9 +3,8 @@ const Schema = mongoose.Schema;
 
 
 const reviewSchema = new Schema({
-    content: { type: String, required: true },
-    rating: { type: Number, required: true },
-    date: { type: Date, default: Date.now },
+    title: { type: String, required: true },
+    rating: { type: Number, min: 1, max: 5, required: true },
     game: { type: Schema.Types.ObjectId, ref: 'Game', required: true },
   });
   
