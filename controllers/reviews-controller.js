@@ -1,31 +1,38 @@
 
 const Game = require('../models/videogame-model');
-const Review = require('../models/videogame-model');
+// const Review = require('../models/videogame-model');
 
 
 module.exports = {
-   newReview,
+  newReview,
   createReview,
   showReview,
 };
 
-function newReview(req, res) {
-  res.render('reviews/new', { gameId: req.params.id });
+async function newReview(req, res) {
+  try{
+  const game = await Game.findById(req.params.id);
+  res.render('reviews/new', { title: "Add Game Review", game,  gameId: req.params.id });
+  } catch (err) {
+    console.error(err);
+}
 }
 
 async function createReview(req, res) {
+  console.log(req.body)
   try {
     const game = await Game.findById(req.params.id);
-    const review = new Review({
+    const review = {
       title: req.body.title,
       rating: req.body.rating,
       content: req.body.content,
       game: game._id,
-    });
-    await review.save();
-
+    };
+    // await review.save();
+console.log(review)
    
     game.reviews.push(review);
+    console.log(game)
     await game.save();
 
     res.redirect(`/videogames/${req.params.id}`);
@@ -34,11 +41,37 @@ async function createReview(req, res) {
   }
 }
 
+// async function showReview(req, res) {
+//   try {
+//     const review = await Review.findById(req.params.reviewId);
+//     res.render('reviews/show', { review });
+//   } catch (err) {
+//     console.error(err);
+//   }
+// }
+
 async function showReview(req, res) {
   try {
-    const review = await Review.findById(req.params.reviewId);
-    res.render('reviews/show', { review });
+    const gameId = req.params.gameId;
+    const reviewId = req.params.reviewId;
+
+    // Fetch the game details by ID
+    const game = await Game.findById(gameId);
+
+    if (!game) {
+      return res.status(404).send('Game not found');
+    }
+
+    // Fetch the review details by ID
+    const review = await Review.findById(reviewId);
+
+    if (!review) {
+      return res.status(404).send('Review not found');
+    }
+
+    res.render('reviews/show', { title: 'Review Details', game, review });
   } catch (err) {
     console.error(err);
+    res.status(500).send('Server Error');
   }
 }
