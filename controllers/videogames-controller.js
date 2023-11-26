@@ -1,15 +1,12 @@
 const Game = require('../models/videogame-model');
 
-
 module.exports = {
     index,
     create,
     new: newGame,
-    show, 
+    show,
     update
 }
-
-
 async function index(req, res) {
     try {
         const allGames = await Game.find();
@@ -19,7 +16,6 @@ async function index(req, res) {
         res.status(500).send('Server Error');
     }
 }
-
 async function create(req, res) {
     try {
         await Game.create(req.body);
@@ -29,11 +25,9 @@ async function create(req, res) {
         res.render('videogames/new', { title: "New Game", errorMsg: err.message });
     }
 }
-
 function newGame(req, res) {
     res.render('videogames/new', { title: "New Game", errorMsg: '' });
 }
-
 async function show(req, res) {
     try {
         const game = await Game.findById(req.params.id);
@@ -43,7 +37,6 @@ async function show(req, res) {
         res.status(404).render('404', { title: 'Not Found' });
     }
 }
-
 async function update(req, res) {
     try {
         const updatedGame = await Game.findByIdAndUpdate(req.params.id, req.body, { new: true });

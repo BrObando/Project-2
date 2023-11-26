@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+<h1>All Blog Posts</h1>
+<body>
+    <table border="1">
+
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Content</th>
+            <th>Date Posted</th>
+        </tr>
+        <% blogs.forEach(blog => { %>
+            <tr>
+                <td><%= blog.title %></td>
+                <td><%= blog.author %></td>
+                <td><%= blog.content %></td>
+                <td><%= blog.createdAt %></td>
+                <td><a href="/blogs/index<%= blog._id %>">Details</a></td>
+            </tr>
+        <% }) %>
+    </table>
+    <a href="/blogs/new">Create a blog post</a>
+</body>
+
+<%- include('../partials/footer') %>
