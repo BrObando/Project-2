@@ -41,28 +41,15 @@ console.log(review)
   }
 }
 
-// async function showReview(req, res) {
-//   try {
-//     const review = await Review.findById(req.params.reviewId);
-//     res.render('reviews/show', { review });
-//   } catch (err) {
-//     console.error(err);
-//   }
-// }
-
 async function showReview(req, res) {
   try {
     const gameId = req.params.gameId;
     const reviewId = req.params.reviewId;
-
-    // Fetch the game details by ID
     const game = await Game.findById(gameId);
 
     if (!game) {
       return res.status(404).send('Game not found');
     }
-
-    // Fetch the review details by ID
     const review = await Review.findById(reviewId);
 
     if (!review) {
@@ -72,6 +59,5 @@ async function showReview(req, res) {
     res.render('reviews/show', { title: 'Review Details', game, review });
   } catch (err) {
     console.error(err);
-    res.status(500).send('Server Error');
   }
 }
