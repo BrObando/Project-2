@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="recent-news-boxes.css" rel="stylesheet/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
     
@@ -16,7 +18,6 @@
             </form>
         </div>
     </nav>
-
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Joystick Jury</title>
 </head>
@@ -28,16 +29,42 @@
         <a href="/">Evidence</a>
         <a href="/videogames">The Verdicts</a> 
     </nav></center>  
-<center><h1>JoYsTiCk JuRy</h1></center>
+
+    <h1>Joystick Jury</h1>   
 
 <div class="row">
     <div class="column">
         <!-- this is the LEFT column. DO NOT REMOVE FOR REMINDER PURPOSES :D -->
+        <h1>Game of the Month</h1>
+
     </div>
-    <div class="column">
+<div class="column">
        <!-- this is the MIDDLE column. DO NOT REMOVE FOR REMINDER PURPOSES :D -->
+       <!--here we will insert the most recent headline of a game. we can try to use an API to import news-->
+       <section class="recentNews">
+        <div class="container">
+          <h2 class="news-title">Recent Verdicts</h2>
+          <div class="row">        
+            <div class="ct-blog col-sm-6 col-md-4">
+              <div class="inner">
+                <div class="fauxcrop">
+                  <a href="#"><img alt="video game" src="https://t3.ftcdn.net/jpg/04/18/88/70/360_F_418887085_G10W0Da9hwhexnsedbYO7MC0q22brWOy.jpg"></a>
+                </div>
+                <div class="ct-blog-content">
+                  <div class="ct-blog-date">
+                    <span>Month</span><strong>Day</strong>
+                  </div>
+                  <h3 class="ct-blog-header">
+                    Insert Recent Headline via API
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
     </div>
     <div class="column">
+        <h1>Upcoming Games</h1>
        <!-- this is the RIGHT column. DO NOT REMOVE FOR REMINDER PURPOSES :D -->
-    </div>
   </div>
+</div>
