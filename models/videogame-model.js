@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-
 const reviewSchema = new Schema({
     title: { type: String, required: true },
     rating: { type: Number, min: 1, max: 5, required: true },
     game: { type: Schema.Types.ObjectId, ref: 'Game', required: true },
   });
   
+
 const vgSchema = new Schema(
     {
     title: {type: String},
@@ -23,7 +23,5 @@ const vgSchema = new Schema(
     reviews: [reviewSchema],
     }
 )
-
 const Game = mongoose.model('Game', vgSchema);
-
 module.exports = Game;
