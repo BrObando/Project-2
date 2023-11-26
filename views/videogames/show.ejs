@@ -10,4 +10,23 @@
         <a href="/">Back to Homepage</a>
     </div>
 
+
+    <h2>Reviews</h2>
+    <ul>
+      <% game.reviews.forEach(review => { %>
+        <li>
+          <%= review.title %> - Rating: <%= review.rating %> 
+          (<a href="/games/<%= game._id %>/reviews/<%= review._id %>">View Details</a>)
+        </li>
+      <% }) %>
+    </ul>
+    
+    <!-- new review link -->
+    <a href="/videogames/<%= game._id %>/reviews/new">Add a Review</a>
+</body>
+</html>
+
+
 <%- include('../partials/footer') %>
+
+
