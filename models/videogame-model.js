@@ -1,6 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+
+const reviewSchema = new Schema({
+    content: { type: String, required: true },
+    rating: { type: Number, required: true },
+    date: { type: Date, default: Date.now },
+    game: { type: Schema.Types.ObjectId, ref: 'Game', required: true },
+  });
+  
 const vgSchema = new Schema(
     {
     title: {type: String},
@@ -13,6 +21,7 @@ const vgSchema = new Schema(
          console.log(currentDate)
         }, required: true},
     ESRB: {type: String, enum: ["eC", "E", "E+10", "T", "M", "Ao (Adults Only 18+)", "RP (Rating Pending)"], required: true},
+    reviews: [reviewSchema],
     }
 )
 
