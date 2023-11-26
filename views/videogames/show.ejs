@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game</title>
-</head>
-<body>
+<%- include('../partials/header') %>
+
     <h1>Game</h1>
     <div>
         <h2><%= game.title %></h2>
@@ -15,17 +9,5 @@
         <p>ESRB Rating: <%= game.ESRB %></p>
         <a href="/">Back to Homepage</a>
     </div>
-    <h2>Reviews</h2>
-    <ul>
-      <% game.reviews.forEach(review => { %>
-        <li>
-          <%= review.title %> - Rating: <%= review.rating %> 
-          (<a href="/games/<%= game._id %>/reviews/<%= review._id %>">View Details</a>)
-        </li>
-      <% }) %>
-    </ul>
-    
-    <!-- new review link -->
-    <a href="/videogames/<%= game._id %>/reviews/new">Add a Review</a>
-</body>
-</html>
+
+<%- include('../partials/footer') %>
