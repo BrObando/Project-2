@@ -13,8 +13,8 @@ const reviewSchema = new Schema({
 const vgSchema = new Schema(
     {
     title: {type: String},
-    genre: {type: String, enum: ["Action", "Sports", "Adventure", "RPG", "Racing", "Fighting", "Simulation"], required: true},
-    platform: {type: String, enum: ["Playstation5", "Playstation4", "XBOXOne", "XBOX Series S", "XBOX Series X", "Computer"], required: true},
+    genre: {type: String, enum: ["Action", "Sports", "Adventure", "RPG", "Racing", "Fighting", "Shooter", "Simulation", "Party"], required: true},
+    platform: {type: String, required: true},
     released: {type: Date,
         default: function() {
          const currentDate = new Date();

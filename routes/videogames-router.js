@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
+
 const videogamesCtrl = require('../controllers/videogames-controller');
+
 router.get('/', videogamesCtrl.index);
 router.get('/new', videogamesCtrl.new);
 
