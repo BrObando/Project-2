@@ -28,13 +28,13 @@ h1 {
   float: left;
 }
 
-/* .navhead {
-background-image: url('images/navhead.png');
+ .navhead {
+background-image: url('./images/navhead.png');
 background-position: center;
 background-repeat: no-repeat;
 position: relative;
 background-size: cover;
-} */
+} 
 
 .columnleft, columnright {
   width: 25%;
