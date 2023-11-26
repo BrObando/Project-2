@@ -13,7 +13,9 @@ const reviewSchema = new Schema({
 const vgSchema = new Schema(
     {
     title: {type: String},
+
     genre: {type: String, enum: ["Action", "Sports", "Adventure", "RPG", "Racing", "Fighting", "Shooter", "Simulation", "Party"], required: true},
+
     platform: {type: String, required: true},
     released: {type: Date,
         default: function() {

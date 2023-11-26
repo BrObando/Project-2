@@ -1,4 +1,4 @@
-
+<%- include('../partials/header') %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<form action="/videogames/<%= game.id %>/reviews" method="POST">
+<form action="/reviews/videogames/<%= game.id %>/reviews" method="POST">
     <label for="title">Title:</label>
     <input type="text" id="title" name="title" required>
     <br>
@@ -23,3 +23,5 @@
 
   <a href="/videogames/<%= game._id %>">Back to Game Details</a>
   </body>
+
+  <%- include('../partials/footer') %>
