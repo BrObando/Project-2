@@ -185,8 +185,7 @@ background-size: cover;
 
 #blog-image {
   border: 4px solid green;
-  max-width: 600px;
-  max-height: 350px;
-  width: 100%; 
+  max-width: fit-content;
+  width: auto; 
   height: auto; 
 }
