@@ -12,5 +12,5 @@ const userSchema = new Schema({
   }, {
     timestamps: true
   });
-
+//fav game field // current game in profile update 
 module.exports = mongoose.model('User', userSchema);

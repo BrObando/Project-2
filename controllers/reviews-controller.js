@@ -54,7 +54,7 @@ async function showReview(req, res) {
     const game = await Game.findById(gameId);
 
     if (!game) {
-      return res.status(404).send('Game not found');
+      return res.status(404).send('nope');
     }
     const review = await Review.findById(reviewId);
 
@@ -70,29 +70,17 @@ async function showReview(req, res) {
 
 async function deleteReview(req, res) {
   try {
-    const gameId = req.params.id;
+    
     const reviewId = req.params.reviewId;
-    const game = await Game.findById(gameId);
 
-    if (!game) {
-      return res.status(404).send('Game not found');
-    }
-    const reviewIndex = game.reviews.findIndex((review) => review._id.equals(reviewId));
 
-    if (reviewIndex === -1) {
-      return res.status(404).send('Review not found');
-      }
-      if (!req.isAuthenticated()) {
-        return res.status(401).send('Unauthorized');
-      }
-      const reviewOwnerId = game.reviews[reviewIndex].user;
-      if (!req.user.equals(reviewOwnerId)) {
-        return res.staus(403).send('Forbidden');
-      }
-    game.reviews.splice(reviewIndex, 1); // remove from array 
-    await game.save();
 
-    res.redirect(`/videogames/${gameId}`);
+    const game = await Game.findOne({"reviews._id": reviewId})
+    game.reviews.remove(reviewId)
+    await game.save() 
+   
+
+    res.redirect(`/videogames/${game._id}`);
   } catch (err) {
     console.error(err);
   }
