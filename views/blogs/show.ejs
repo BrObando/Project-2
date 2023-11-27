@@ -1,5 +1,10 @@
 <%- include('../partials/header') %>
 <div id="blog-details">
+  <% if (blog.imageUrl) { %>
+  <tr>
+    <td><img src="<%= blog.imageUrl %>" alt="Blog Image" /></td>
+  </tr>
+  <% } %>
   <th><strong>Title:</strong></th>
   <td><%= blog.title %></td>
   <br />

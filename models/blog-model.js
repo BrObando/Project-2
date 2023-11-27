@@ -6,6 +6,7 @@ const blogSchema = new Schema({
   author: { type: String, required: true },
   content: { type: String, required: true },
   createdAt: { type: Date, default: Date.now },
+  imageUrl: { type: String },
 });
 
 const Blog = mongoose.model("Blog", blogSchema);
