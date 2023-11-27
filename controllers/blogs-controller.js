@@ -23,8 +23,9 @@ function newBlog(req, res) {
 
 async function createBlog(req, res) {
     try {
-        await Blog.create(req.body);
-        res.redirect('/blogs');
+        const { title, author, content, createdAt } = req.body;
+        await Blog.create({ title, author, content, createdAt });
+        res.redirect('/blogs/index');
     } catch (err) {
         console.error(err);
         res.render('blogs/new', { title: "New Blog", errorMsg: err.message });
