@@ -34,8 +34,8 @@ async function createBlog(req, res) {
 
 async function showBlog(req, res) {
     try {
-        const blog = await Blog.findById(req.params.id);
-        res.render('blogs/show', { blog});
+        const blog = await Blog.findById(req.params.blogId);
+        res.render('blogs/show', { blog });
     } catch (err) {
         console.error(err);
         res.status(404).render('404', { title: 'Not Found' });
