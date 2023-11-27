@@ -1,9 +1,10 @@
 html {
-  background: url(images/image.png) no-repeat center center fixed;
+  background: url(/images/image.png) no-repeat center center fixed;
    background-size: cover;
   display: flex;
   align-items: center;
  flex-direction: column;
+ 
  width: 100vw;
   height: 100vh;
   
@@ -20,8 +21,21 @@ html {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-h1 {
+/* h1 {
   text-align: center;
+
+} */
+
+header {
+    background-repeat: no-repeat;
+    /* padding: 10px; */
+  }
+
+/* Logo styles */
+.logo {
+  /* max-width: 100px; */
+  background-position: center;
+  height: 50%;
 
 }
 
@@ -87,11 +101,11 @@ background-size: cover;
 }
 .ct-blog-content {
   display: table;
-  /* padding: 30px 0 28px; */
+  padding: 30px 0 28px;
 }
 .ct-blog-content .ct-blog-date {
   border-right: 1px solid #95A5A6;
-  /* display: table-cell; */
+  display: table-cell;
   font-family: "Lato", sans-serif;
   padding: 0px 18px 0px 15px;
   text-align: center;
