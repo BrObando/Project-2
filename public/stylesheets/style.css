@@ -148,6 +148,7 @@ recentNews {
   .column {
     width: 100%;
   } 
+
 } /* take out if needed once all parts of layout is complete
 
 
@@ -172,3 +173,14 @@ recentNews {
   border-radius: 50%;
   height: 40px;
 }
+
+} /* take out if needed once all parts of layout is complete  */
+
+#blog-post {
+  border: 4px solid blue;
+}
+
+#blog-details {
+  border: 4px solid rebeccapurple;
+}
+
