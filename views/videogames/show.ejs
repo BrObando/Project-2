@@ -17,6 +17,7 @@
       <% if (game.reviews.length > 0) { %>
         <% game.reviews.forEach(review => { %>
           <li>
+            <td class="review-user"><img alt="avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer" ><%= review.userName %></td>
             <h3><%= review.title %></h3>
             <p>Rating: <%= review.rating %></p>
             <p>Content: <%= review.content %></p>
@@ -27,9 +28,10 @@
         <p>No reviews available for this game.</p>
       <% } %>
     </ul>
-    
+    <% if (user) { %>
     <!-- new review link -->
     <a href="/reviews/videogames/<%= game._id %>/reviews/new">Add a Review</a>
+    <% } %> 
    
 </body>
 </html>

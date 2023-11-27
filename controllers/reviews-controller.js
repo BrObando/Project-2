@@ -19,7 +19,7 @@ async function newReview(req, res) {
 }
 
 async function createReview(req, res) {
-  console.log(req.body)
+  // console.log(req.body)
   try {
     const game = await Game.findById(req.params.id);
     const review = {
@@ -27,9 +27,14 @@ async function createReview(req, res) {
       rating: req.body.rating,
       content: req.body.content,
       game: game._id,
+      user: req.user,
+      userAvatar: req.user.avatar, 
+      username: req.user.name
     };
-    // await review.save();
-console.log(review)
+
+
+console.log("body",req.body)
+console.log("user",req.user)
    
     game.reviews.push(review);
     console.log(game)
