@@ -41,7 +41,20 @@
       <a href="/reviews/videogames/<%= game._id %>/reviews/new">Add a Review</a>
       <% } %> 
     </ul>
+
     
+
+    <% if (user) { %>
+new review link 
+    <a href="/reviews/videogames/<%= game._id %>/reviews/new">Add a Review</a>
+    <% } %> 
+    <% if (user) { %>
+      <form action = "/reviews/videogames/<%= game._id %>/reviews/<%= review._id %>/delete" method="delete">>
+        <button type="submit">Delete Review</button>
+      </form>
+
+    <% } %>
+
    
 </body>
 </html>
