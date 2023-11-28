@@ -1,3 +1,4 @@
+<%- include('../partials/header') %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +8,12 @@
 </head>
 <body>
   <h1>User Profile</h1>
-  <p>Welcome, <%= user.displayusername %>!</p>
+  <p>Welcome, <%= user.username%>!</p>
   <p>Status: <%= user.status || 'No status set' %></p>
-  <a href="/auth/logout">Logout</a>
+  <!-- <a href="/auth/logout">Logout</a> -->
+  <a href="/profiles/edit">Edit Status</a>
+
 </body>
 </html>
+
+<%- include('../partials/footer') %>

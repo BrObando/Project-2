@@ -4,6 +4,7 @@ const Profile = require('../models/profile');
 module.exports = {
     updateProfile,
     showProfile, 
+    editProfile,
   };
 
 
@@ -16,7 +17,7 @@ async function updateProfile(req, res) {
       
   await Profile.findByIdAndUpdate(profileId, status, {new: true} ) // new tru - update // status - takes the info to update 
       
-  res.render('profiles/update', { profile: updatedProfile });
+  res.render('profiles/edit', { profile: updatedProfile });
   
       
     } catch (error) {
@@ -44,4 +45,15 @@ async function showProfile(req, res) {
 
 // async function editProfile(req.res){
 
-// }
+async function editProfile(req, res) {
+  const profileId = req.params.id;
+  try {
+      const profile = await Profile.findById(profileId)
+      res.render('profiles/edit', { profile, editProfile });
+      await profile.save();
+  }
+  
+  catch (err) {
+      console.log(err)
+  }
+}
