@@ -190,15 +190,30 @@ background-size: cover;
   height: auto; 
 }
 
+#search-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .game-container {
-  display: inline-block; 
+  flex: 0 0 calc(33.33% - 20px); 
   margin: 10px;
   text-align: center;
+  position: relative;
 }
 
 .game-container:hover {
   border: 6px solid #B933FF;
   background-color: #B933FF;
-  color: white;
+  color:white;
 }
 
+.image-container {
+  display: block;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
