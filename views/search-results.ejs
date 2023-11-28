@@ -2,23 +2,16 @@
 
 <h2>Search Results</h2>
 <ul>
-  <% searchResults.forEach(result => { %>
-    <% if (result.imageUrl) { %>
+  <% searchResults.forEach(result => { %> <% if (result.imageUrl) { %>
+  <a href="/videogames/<%= result._id %>">
     <img src="<%= result.imageUrl %>" alt="<%= result.title %> Image" />
-    <% } else { %>
-    <p>No Image</p>
-    <% } %>
-    <br>
-    <h3><%= result.title %></h3>:
-    <a href="/videogames/<%= result._id %>">Details</a>
-
-  <% }) %>
+  </a>
+  <% } else { %>
+  <p>No Image</p>
+  <% } %>
+  <br />
+  <h3><%= result.title %></h3>
+  : <% }) %>
 </ul>
 
 <%- include('./partials/footer') %>
-
-
-
-
-
-
