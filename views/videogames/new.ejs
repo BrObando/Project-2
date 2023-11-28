@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
-</head>
-<body>
+<%- include('../partials/newsheader') %>
+
     <h1><%= title %></h1>
-    
+
     <form action="/videogames" method="POST">
         <label for="title">Title:</label>
         <input type="text" id="title" name="title" required>
@@ -32,9 +26,13 @@
             <option value="RP (Rating Pending)">RP (Rating Pending)</option>
         </select>
         <br>
+        <label for="imageUrl">Image URL:</label>
+        <input type="text" id="videogame-image" name="imageUrl">
+        <br>
         <button type="submit">Create Game</button>
     </form>
-
     <a href="/">Back to HomePage</a>
 </body>
 </html>
+
+<%- include('../partials/footer') %>

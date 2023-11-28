@@ -1,31 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Games</title>
-</head>
-<body>
-    <h1>All Games</h1>
-    <table border="1">
-        <tr>
-            <th>Title</th>
-            <th>Genre</th>
-            <th>Platform</th>
-            <th>Release Date</th>
-            <th>ESRB Rating</th>
-            <th>Details</th>
-        </tr>
-        <% games.forEach(game => { %>
-            <tr>
-                <td><%= game.title %></td>
-                <td><%= game.genre %></td>
-                <td><%= game.platform %></td>
-                <td><%= game.released.toLocaleDateString() %></td>
-                <td><%= game.ESRB %></td>
-                <td><a href="/videogames/<%= game._id %>">Details</a></td>
-            </tr>
-        <% }) %>
-    </table>
-</body>
-</html>
+<%- include('../partials/newsheader') %>
+
+<table id="index" border="1">
+ <h1>All Games</h1> 
+  <tr>
+    <th></th>
+    <th>Title</th>
+    <th>Genre</th>
+    <th>Platform</th>
+    <th>Release Date</th>
+    <th>ESRB Rating</th>
+    <th>Details</th>
+  </tr>
+  <% games.forEach(game => { %>
+  <tr>
+    <td>
+      <% if (game.imageUrl) { %>
+      <img src="<%= game.imageUrl %>" alt="Videogame Image" />
+      <% } %>
+    </td>
+    <td><%= game.title %></td>
+    <td><%= game.genre %></td>
+    <td><%= game.platform %></td>
+    <td><%= game.released.toLocaleDateString() %></td>
+    <td><%= game.ESRB %></td>
+    <td><a href="/videogames/<%= game._id %>">Details</a></td>
+  </tr>
+  <% }) %>
+</table>

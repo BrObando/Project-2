@@ -1,0 +1,29 @@
+<%- include('../partials/newsheader') %>
+<h1>All Blog Posts</h1>
+<body>
+  <div id="blog-post">
+    <% blogs.forEach(blog => { %>
+    <tr>
+      <th><strong>Title:</strong></th>
+      <td><%= blog.title %></td>
+      <br />
+      <th><strong>Author:</strong></th>
+      <td><%= blog.author %></td>
+      <br />
+      <th><strong>Date Posted:</strong></th>
+      <td><%= blog.createdAt.toLocaleDateString() %></td>
+      <br />
+      <!--The Blog Index page will just show the title, author and date posted. 
+          Click "Read full blog" to read the content.
+          This should help de-clutter the Blog Index Page-->
+      <!--<td><%= blog.content %></td><br> -->
+      <td><a href="/blogs/<%= blog._id %>">Read Full Blog</a></td>
+      <br>
+      <br>
+    </tr>
+    <% }) %>
+  </div>
+  <a href="/blogs/new">Create a blog post</a>
+</body>
+
+

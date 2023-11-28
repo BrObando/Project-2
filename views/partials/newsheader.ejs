@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="recent-news-boxes.css" rel="stylesheet/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="search-bar">
+            <form action="/search" method="GET">
+                <input type="text" name="query" placeholder="Search JoystickJury...">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    <% if (user) { %>
+        <a href="/logout">LOG OUT</a>
+    <% } else { %>
+    <a href="/auth/google" class="login">LOG IN&nbsp;<img class="google" src="https://i.imgur.com/FHjYyi0.png"></a>
+  <% } %>
+    </nav>
+
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Joystick Jury</title>
+</head>
+<body>
+  <center><nav class="jurycon">
+    <a href="/">Home</a> |
+    <a href="/">Reviews</a> |
+    <a href="/">Features</a> |
+    <a href="/blogs/index">Blog</a> |
+    <a href="/news">Gamer News</a> |
+    <a href="/videogames">Game Index</a> 
+</nav>
+
+    <header>
+    <img src="/images/jjlogo.png" alt="jjlogo" class="logo">
+   </header></center>  
+   <div class="column">
+    <!-- this is the LEFT column. DO NOT REMOVE FOR REMINDER PURPOSES :D -->
+    <h3>Game of the Month</h3>
+    <section class="gameofmonth">
+        <div class="container">
+           <!-- <h3 class="news-title">Recent Verdicts</h3>  -->
+          <div class="row">        
+            <div class="ct-blog col-sm-6 col-md-4">
+              <div class="inner">
+                <div class="fauxcrop">
+                  <a href="/"><img alt="video game" src="https://cdn2.unrealengine.com/fall-guys-season-pass-2000x1125-b51956a046b0.png"></a>
+                </div>
+                <div class="ct-blog-content">
+                  <!-- <div class="ct-blog-date"> -->
+                    <!-- <span>January</span><strong>7</strong> -->
+                  <!-- </div> -->
+                  <h3 class="ct-blog-header">
+                     Fall Guys!!
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+    </div>
+   </div>
+
+
+</div>
+<!-- <div class="column"> -->
+   <!-- this is the MIDDLE column. DO NOT REMOVE FOR REMINDER PURPOSES :D  -->
+   <!-- here we will insert the most recent headline of a game. we can try to use an API to import news -->
+       <!-- <h3 class="news-title">Gamer News</h3>
+       
+     </div> -->
+
+
+  
+

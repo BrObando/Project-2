@@ -1,0 +1,19 @@
+<%- include('../partials/blankheader') %>
+
+<div id="blog-details">
+  <h2><%= blog.title %></h2>
+  <h5>
+   <strong>Written By: <%= blog.author %> </strong> <%= blog.createdAt.toLocaleDateString() %>
+  </h5>
+
+  <div id="blog-image">
+    <% if (blog.imageUrl) { %>
+    <img src="<%= blog.imageUrl %>" alt="Blog Image" />
+  </div>
+  <% } %>
+  <br />
+  <br />
+  <%= blog.content %>
+</div>
+
+<%- include('../partials/footer') %>
