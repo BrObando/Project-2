@@ -2,6 +2,9 @@
 
     <h1>Game</h1>
     <div>
+      <% if (game.imageUrl) { %>
+        <img src="<%= game.imageUrl %>" alt="Videogame Image" />
+      <% } %>
         <h2><%= game.title %></h2>
         <p>Genre: <%= game.genre %></p>
         <p>Platform: <%= game.platform %></p>
@@ -21,7 +24,7 @@
             <h3><%= review.title %></h3>
             <p>Rating: <%= review.rating %></p>
             <p><%= review.content %></p>
-            <!-- <a href="/games/</%= game._id %>/reviews/<%= review._id %>">View Details</a> -->
+             <a href="/games/</%= game._id %>/reviews/<%= review._id %>">View Details</a> 
           </li>
             <% if (user) { %>
               <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
@@ -38,7 +41,20 @@
       <a href="/reviews/videogames/<%= game._id %>/reviews/new">Add a Review</a>
       <% } %> 
     </ul>
+
     
+
+    <% if (user) { %>
+new review link 
+    <a href="/reviews/videogames/<%= game._id %>/reviews/new">Add a Review</a>
+    <% } %> 
+    <% if (user) { %>
+      <form action = "/reviews/videogames/<%= game._id %>/reviews/<%= review._id %>/delete" method="delete">>
+        <button type="submit">Delete Review</button>
+      </form>
+
+    <% } %>
+
    
 </body>
 </html>

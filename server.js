@@ -18,7 +18,11 @@ const indexRouter = require('./routes/index');
 const videogameRouter = require('./routes/videogames-router');
 const reviewRouter = require('./routes/reviews-router');
 const blogRouter = require('./routes/blogs-router');
+
 const profileRouter = require('./routes/profiles-router');
+
+const searchRouter = require('./routes/search-route');
+
 
 const app = express();
 
@@ -32,6 +36,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
+app.use('/search', searchRouter);
 
 app.use(session({
   secret: process.env.SECRET,

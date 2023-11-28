@@ -1,21 +1,19 @@
 <%- include('../partials/header') %>
-<div id="blog-details">
-  <% if (blog.imageUrl) { %>
-  <tr>
-    <td><img src="<%= blog.imageUrl %>" alt="Blog Image" /></td>
-  </tr>
-  <% } %>
-  <th><strong>Title:</strong></th>
-  <td><%= blog.title %></td>
-  <br />
 
-  <th><strong>Author:</strong></th>
-  <td><%= blog.author %></td>
+<div id="blog-details">
+  <h2><%= blog.title %></h2>
+  <h5>
+   <strong>Written By: <%= blog.author %> </strong> <%= blog.createdAt.toLocaleDateString() %>
+  </h5>
+
+  <div id="blog-image">
+    <% if (blog.imageUrl) { %>
+    <img src="<%= blog.imageUrl %>" alt="Blog Image" />
+  </div>
+  <% } %>
   <br />
-  <th><strong>Date Posted:</strong></th>
-  <td><%= blog.createdAt.toLocaleDateString() %></td>
   <br />
-  <br />
-  <td><%= blog.content %></td>
+  <%= blog.content %>
 </div>
+
 <%- include('../partials/footer') %>
