@@ -25,7 +25,8 @@
             <h3>Title: <%= review.title %></h3>
             <p>Rating: <%= review.rating %></p>
             <p><%= review.content %></p>
-
+             
+          </li>
             <% if (user) { %>
               <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
                 <button type="submit">X</button>
@@ -41,6 +42,12 @@
       <a href="/reviews/videogames/<%= game._id %>/reviews/new">Add a Review</a>
       <% } %> 
     </ul>
+
+    
+
+ 
+
+   
 </body>
 </html>
 </center>

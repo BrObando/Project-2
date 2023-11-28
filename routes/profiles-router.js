@@ -4,8 +4,9 @@ const profileCtrl = require('../controllers/profiles-controller');
 
 const ensureLoggedIn = require('../config/ensureLoggedIn')
 
-router.post('/:id/edit', ensureLoggedIn, profileCtrl.updateProfile);
-router.get('/:id/show', ensureLoggedIn, profileCtrl.showProfile);
-router.get('/edit', ensureLoggedIn, profileCtrl.editProfile)
+router.put('/:id/edit', ensureLoggedIn, profileCtrl.updateProfile); //
+router.get('/edit', ensureLoggedIn, profileCtrl.editProfile)//route goes first - wsame structure
+router.get('/:id', ensureLoggedIn, profileCtrl.showProfile);
+
 
 module.exports = router;
