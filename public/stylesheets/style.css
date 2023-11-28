@@ -195,8 +195,9 @@ background-size: cover;
   .column {
     width: 100%;
   } 
+}
 
-} /* take out if needed once all parts of layout is complete
+/* take out if needed once all parts of layout is complete
 
 
 .login {
@@ -221,7 +222,7 @@ background-size: cover;
   height: 40px;
 }
 
-} /* take out if needed once all parts of layout is complete  */
+}  */
 
 #blog-post {
   /* border: 4px solid #009de4; */
