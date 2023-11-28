@@ -1,6 +1,7 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const User = require('../models/user');
+const Profile = require('../models/profile');
 
 passport.use(new GoogleStrategy(
     // Configuration object
@@ -20,13 +21,29 @@ passport.use(new GoogleStrategy(
         let user = await User.findOne({ googleId: profile.id });
         // Existing user found, so provide it to passport
         if (user) return cb(null, user);
+
+        const newProfile = new Profile({
+          username: profile.displayName, 
+          status: 'Currently playing ...',
+        })
+
         // We have a new user via OAuth!
-        user = await User.create({
+        const newUser = new User ({
           name: profile.displayName,
           googleId: profile.id,
           email: profile.emails[0].value,
-          avatar: profile.photos[0].value
+          avatar: profile.photos[0].value, 
+          profile: newProfile._id
         });
+
+        // profile = await Profile.create({ // this is coming from profile model 
+        //   // username: user.name,
+        //   user: user.id, // this comes from user above 
+        // });
+        // user.profile = profile._id
+        await newProfile.save()
+        await newUser.save() //allows user to create a profile automatically 
+        
         return cb(null, user);
       } catch (err) {
         return cb(err);
