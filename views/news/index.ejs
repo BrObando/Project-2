@@ -1,0 +1,19 @@
+<%- include('../partials/newsheader') %>
+
+    <div class="column">
+        <!-- this is the MIDDLE column. DO NOT REMOVE FOR REMINDER PURPOSES :D --> 
+        <!--- here we will insert the most recent headline of a game. we can try to use an API to import news -->
+               
+    <!-- <h1>Game News</h1> -->
+    <% news.forEach(function(n){ %>
+       <a href="<%=n.site_detail_url%>"><img src="<%=n.image.original%>"></a></br> 
+       <h2><%=n.title%></h2> </br>
+       <p>Published: <%=n.publish_date%></p> </br>
+       <p>Updated: <%=n.update_date%></p> </br>
+       <p>Authors: <%=n.authors%></p> </br> 
+<%})%> 
+
+</div> 
+<!-- </body> -->
+<!-- </html> -->
+

@@ -18,6 +18,7 @@ const indexRouter = require('./routes/index');
 const videogameRouter = require('./routes/videogames-router');
 const reviewRouter = require('./routes/reviews-router');
 const blogRouter = require('./routes/blogs-router');
+const newsApiRouter = require('./routes/api-router')
 
 const app = express();
 
@@ -50,6 +51,7 @@ app.use('/', indexRouter);
 app.use('/videogames', videogameRouter);
 app.use('/reviews', reviewRouter);
 app.use('/blogs', blogRouter);
+app.use("/", newsApiRouter);
 
 // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
