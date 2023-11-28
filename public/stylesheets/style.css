@@ -189,3 +189,16 @@ background-size: cover;
   width: auto; 
   height: auto; 
 }
+
+.game-container {
+  display: inline-block; 
+  margin: 10px;
+  text-align: center;
+}
+
+.game-container:hover {
+  border: 6px solid #B933FF;
+  background-color: #B933FF;
+  color: white;
+}
+
