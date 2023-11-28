@@ -32,9 +32,7 @@ async function showProfile(req, res) {
         const profileId = req.params.id;
         const {status} = req.body; 
 
-    // if (!req.isAuthenticated()) {
-    //   return res.redirect('/');
-    // }
+
     const profile = await Profile.findById(profileId);
 
     res.render('profiles/show', { profile, showProfile });
@@ -43,7 +41,7 @@ async function showProfile(req, res) {
   }
 }
 
-// async function editProfile(req.res){
+
 
 async function editProfile(req, res) {
   const profileId = req.params.id;
