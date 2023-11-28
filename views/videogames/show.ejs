@@ -1,6 +1,6 @@
-<%- include('../partials/header') %>
+<%- include('../partials/blankheader') %>
 
-    <h1>Game</h1>
+    <center> <h1>Game</h1>
     <div>
       <% if (game.imageUrl) { %>
         <img src="<%= game.imageUrl %>" alt="Videogame Image" />
@@ -11,10 +11,10 @@
         <p>Release Date: <%= game.released.toDateString() %></p>
         <p>ESRB Rating: <%= game.ESRB %></p>
         <a href="/">Back to Homepage</a>
-    </div>
+    </div> </center>
 
-
-    <h2>Reviews</h2>
+<center>
+   <h2>Reviews</h2>
   
     <ul>
       <% if (game.reviews.length > 0) { %>
@@ -58,8 +58,9 @@ new review link
    
 </body>
 </html>
+</center>
 
 
-<%- include('../partials/footer') %>
+
 
 
