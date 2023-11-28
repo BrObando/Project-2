@@ -70,14 +70,13 @@ async function showReview(req, res) {
 
 async function deleteReview(req, res) {
   try {
-    
     const reviewId = req.params.reviewId;
-
-
-
     const game = await Game.findOne({"reviews._id": reviewId})
     game.reviews.remove(reviewId)
-    await game.save() 
+    await game.save()
+
+
+     
    
 
     res.redirect(`/videogames/${game._id}`);
