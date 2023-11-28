@@ -37,6 +37,7 @@ const vgSchema = new Schema(
          console.log(currentDate)
         }, required: true},
     ESRB: {type: String, enum: ["eC", "E", "E+10", "T", "M", "Ao (Adults Only 18+)", "RP (Rating Pending)"], required: true},
+    imageUrl: { type: String },
     reviews: [reviewSchema],
     }
 )
