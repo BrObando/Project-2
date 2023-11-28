@@ -20,12 +20,12 @@
     <ul>
       <% if (game.reviews.length > 0) { %>
         <% game.reviews.forEach(review => { %>
-          <li>
+
             <td class="review-user"><img alt="avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer" ><%= review.userName %></td>
             <h3>Title: <%= review.title %></h3>
             <p>Rating: <%= review.rating %></p>
             <p><%= review.content %></p>
-          </li>
+
             <% if (user) { %>
               <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
                 <button type="submit">X</button>
