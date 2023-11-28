@@ -13,7 +13,7 @@ async function index(req, res) {
         res.render('videogames/index', { title: "All Games", games: allGames });
     } catch (err) {
         console.error(err);
-        res.status(500).send('Server Error');
+        res.status(404).render('404', { title: 'Not Found' });
     }
 }
 async function create(req, res) {
