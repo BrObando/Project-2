@@ -19,7 +19,7 @@ const videogameRouter = require('./routes/videogames-router');
 const reviewRouter = require('./routes/reviews-router');
 const blogRouter = require('./routes/blogs-router');
 const newsApiRouter = require('./routes/api-router')
-=======
+
 
 const profileRouter = require('./routes/profiles-router');
 
@@ -61,7 +61,7 @@ app.use('/reviews', reviewRouter);
 app.use('/blogs', blogRouter);
 
 app.use("/", newsApiRouter);
-=======
+
 app.use('/profiles', profileRouter);
 
 
