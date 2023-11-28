@@ -7,7 +7,7 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 router.get('/videogames/:id/reviews/new', ensureLoggedIn, reviewCtrl.newReview);
 router.post('/videogames/:id/reviews', ensureLoggedIn, reviewCtrl.createReview);
 router.get('/videogames/:id/reviews/:reviewId', reviewCtrl.showReview);
-router.delete('/videogames/:gameId/reviews/:reviewId', ensureLoggedIn, reviewCtrl.deleteReview); //delete***
+router.delete('/:reviewId', ensureLoggedIn, reviewCtrl.deleteReview); //delete***
 
 
 

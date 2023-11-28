@@ -8,9 +8,10 @@ const userSchema = new Schema({
       required: true
     },
     email: String,
-    avatar: String
+    avatar: String,
+    profile: {type: Schema.Types.ObjectId, ref: 'Profile'}
   }, {
     timestamps: true
   });
-
+//fav game field // current game in profile update 
 module.exports = mongoose.model('User', userSchema);
