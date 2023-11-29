@@ -14,6 +14,7 @@
     </div> </center>
 
 <center>
+  
    <h3>Reviews</h3>
   
     <ul>
@@ -21,7 +22,7 @@
         <% game.reviews.forEach(review => { %>
           <ul>
             <td class="review-user"><img alt="avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer" ><%= review.userName %></td> 
-            <% if (user && review.user) { %>
+            <% if (user && review.user ) { %>
               <p>Currently Playing...<%= review.user.status|| 'No Status Yet' %></p>
             <% } %>
             <h3><%= review.title %></h3>
@@ -44,15 +45,17 @@
       <% if (user) { %>
       
       <!-- new review link -->
+      
+    
       <a href="/reviews/videogames/<%= game._id %>/reviews/new">Add a Review</a>
+      
       <% } %> 
     </ul>
 
     
 
- 
 
-   
+
 </body>
 </html>
 </center>

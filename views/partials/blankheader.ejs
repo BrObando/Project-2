@@ -27,7 +27,7 @@
         </div>
     <% if (user) { %>
         <a href="/logout">LOG OUT</a>
-        <a href="/profiles/<%=user._id %>">PROFILE</a>
+        <a href="/profiles/<%=user._id %>/show">PROFILE</a>
     <% } else { %>
     <a href="/auth/google" class="login">LOG IN&nbsp;<img class="google" src="https://i.imgur.com/FHjYyi0.png"></a>
   <% } %>
