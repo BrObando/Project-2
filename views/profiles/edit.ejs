@@ -8,7 +8,7 @@
 </head>
 <body>
   <h1>Edit Profile</h1>
-  <form action="/profiles/<%= user._id %>?_method=PUT/edit" method="POST">
+  <form action="/profiles/<%= user._id %>/edit?_method=PUT" method="POST">
     <label for="status">Status:</label>
     <input type="text" id="status" name="status" value="<%= user.status %>">
     <button type="submit">Save Changes</button>

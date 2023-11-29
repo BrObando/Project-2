@@ -7,10 +7,10 @@
   <title>User Profile</title>
 </head>
 <body>
-  <h1>User Profile</h1>
-  <p>Welcome, <%= user.username%>!</p>
+  <h1>Profile</h1>
+  <p>Welcome, <%= user.name%>!</p>
   <p>Status: <%= user.status || 'No status set' %></p>
-  <!-- <a href="/auth/logout">Logout</a> -->
+
   <a href="/profiles/edit">Edit Status</a>
 
 </body>
