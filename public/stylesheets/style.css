@@ -285,14 +285,29 @@ hr.rounded {
 
 /* NAVBAR CSS */
 .navbar {
-  background-color: #b933ff;
+  background-color: #B933FF;
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 10px;
   border-radius: 15px;
   box-sizing: border-box;
-  border: 2px solid #009de4;
+  border: 2px solid #009DE4;
+}
+
+.profile-logout-container {
+  display: flex;
+  align-items: center;
+}
+
+.profile-logout-container a {
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.profile-logout-container a:hover {
+  text-decoration: underline;
 }
 
 .search-bar {
@@ -311,13 +326,21 @@ hr.rounded {
   margin-right: 5px;
 }
 
+#search-button {
+  color: white;
+  background-color: #009de4;
+  border: 2px solid white;
+  padding: 8px 8px;
+  font-size: 14px;
+}
+
 .navbar a {
   color: white;
   background-color: #009de4;
   border: 2px solid white;
   text-decoration: none;
   font-size: 16px;
-  padding: 4px;
+  padding: 4px 8px;
 }
 
 .navbar a:hover {
@@ -337,19 +360,4 @@ hr.rounded {
 
 .jurycon:hover {
   color: #b933ff;
-}
-
-.profile-logout-container {
-  display: flex;
-  align-items: center;
-}
-
-.profile-logout-container a {
-  color: white;
-  text-decoration: none;
-  margin-right: 10px; 
-}
-
-.profile-logout-container a:hover {
-  text-decoration: underline;
 }
