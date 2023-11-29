@@ -18,20 +18,22 @@
 </head>
 <body>
     
-    <nav class="navbar">
-        <div class="search-bar">
-          <form action="/search" method="GET">
-                <input type="text" name="query" placeholder="Search JoystickJury...">
-                <button type="submit">Search</button>
-            </form>
-        </div>
-    <% if (user) { %>
-        <a href="/logout">LOG OUT</a>
-        <a href="/profiles/<%=user._id %>/show">Profile</a>
-    <% } else { %>
-    <a href="/auth/google" class="login">LOG IN&nbsp;<img class="google" src="https://i.imgur.com/FHjYyi0.png"></a>
-  <% } %>
-    </nav>
+  <nav class="navbar">
+    <div class="profile-logout-container">
+        <% if (user) { %>
+            <a href="/profiles/<%=user._id %>/show">PROFILE</a>
+            <a href="/logout">LOG OUT</a>
+        <% } else { %>
+            <a href="/auth/google" class="login">LOG IN&nbsp;<img class="google" src="https://i.imgur.com/FHjYyi0.png"></a>
+        <% } %>
+    </div>
+    <div class="search-bar">
+        <form action="/search" method="GET">
+            <input type="text" name="query" placeholder="Search JoystickJury...">
+            <button type="submit" id="search-button">Search</button>
+        </form>
+    </div>
+</nav>
 
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Joystick Jury</title>
@@ -72,6 +74,28 @@
             </div>
           </div>
       </section>
+      <hr class="dotted">
+        <div class="genres"> 
+          <h2>Popular Genres</h2>
+          <ul>
+           <li><a href="/search?query=action">Action</a></li>
+           <li><a href="/search?query=adventure">Adventure</a></li>
+            <li><a href="/search?query=fighting">Fighting</a></li>
+            <li><a href="/search?query=shooter">First Person Shooter</a></li>
+            <li><a href="/search?query=rpg">Role-Playing</a></li>
+            <li><a href="/search?query=simulation">Simulation</a></li>
+          </ul>
+</div>
+  <hr class="dotted">
+   <div class="socialmedia"> 
+    <h3>Follow Us!</h3>
+      <a href="https://www.facebook.com"><img alt="facebook" src="/images/facebook.png"></a>
+      <a href="https://www.instagram.com"><img alt="instagram" src="/images/instagram.png"></a></br>
+      <a href="https://www.twitter.com"><img alt="twitter" src="/images/twitter.png"></a>
+      <a href="https://www.youtube.com"><img alt="youtube" src="/images/youtube.png"></a>
+      </div>
+     </div>
+  </div>
     </div>
    </div>
 
@@ -83,9 +107,6 @@
    <!-- here we will insert the most recent headline of a game. we can try to use an API to import news -->
          
      </div> 
-
-
-
 
 
   
