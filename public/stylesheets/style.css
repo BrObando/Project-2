@@ -342,22 +342,3 @@ hr.rounded {
   font-size: 16px;
   padding: 4px 8px;
 }
-
-.navbar a:hover {
-  color: #fff;
-  background-color: #b933ff;
-}
-
-.jurycon {
-  font-weight: 700;
-  line-height: 2;
-}
-
-.jurycon a {
-  font-size: 16px;
-  color: rgba(0, 157, 228, 130);
-}
-
-.jurycon:hover {
-  color: #b933ff;
-}
