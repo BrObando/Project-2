@@ -52,8 +52,10 @@ header {
 
 }
 
+
 .google {
-  height: 25px;
+  height: 20px;
+  float: right;
 }
 
 .column {
