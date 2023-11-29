@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Document</title>
+    <title>Joystick Jury</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Montserrat:wght@100&family=Roboto&display=swap" rel="stylesheet">
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <link href="recent-news-boxes.css" rel="stylesheet/style.css">
@@ -16,13 +20,14 @@
     
     <nav class="navbar">
         <div class="search-bar">
-            <form action="/search" method="GET">
+          <form action="/search" method="GET">
                 <input type="text" name="query" placeholder="Search JoystickJury...">
                 <button type="submit">Search</button>
             </form>
         </div>
     <% if (user) { %>
         <a href="/logout">LOG OUT</a>
+        <a href="/profiles/<%=user._id %>/show">Profile</a>
     <% } else { %>
     <a href="/auth/google" class="login">LOG IN&nbsp;<img class="google" src="https://i.imgur.com/FHjYyi0.png"></a>
   <% } %>
@@ -30,20 +35,19 @@
 
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Joystick Jury</title>
+    </body>
 </head>
 <body>
   <center><nav class="jurycon">
-    <a href="/">Home</a> |
-    <a href="/">Reviews</a> |
-    <a href="/">Features</a> |
-    <a href="/blogs/index">Blog</a> |
-    <a href="/news">Gamer News</a> |
-    <a href="/videogames">Game Index</a> 
-</nav>
+        <a href="/">Home</a> |
+        <a href="/blogs/index">Blog</a> |
+        <a href="/news">Gamer News</a> |
+        <a href="/videogames">Game Index</a> 
+    </nav>
 
     <header>
-    <img src="/images/jjlogo.png" alt="jjlogo" class="logo">
-   </header></center>  
+      <img src="/images/jjlogo.png" alt="jjlogo" class="logo">
+     </header></center> 
    <div class="column">
     <!-- this is the LEFT column. DO NOT REMOVE FOR REMINDER PURPOSES :D -->
     <h3>Game of the Month</h3>
@@ -73,12 +77,15 @@
 
 
 </div>
-<!-- <div class="column"> -->
+
+<div class="column"> 
    <!-- this is the MIDDLE column. DO NOT REMOVE FOR REMINDER PURPOSES :D  -->
    <!-- here we will insert the most recent headline of a game. we can try to use an API to import news -->
-       <!-- <h3 class="news-title">Gamer News</h3>
-       
-     </div> -->
+         
+     </div> 
+
+
+
 
 
   
