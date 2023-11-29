@@ -17,20 +17,21 @@
 
 </head>
 <body>
-    
     <nav class="navbar">
+        <div class="profile-logout-container">
+            <% if (user) { %>
+                <a href="/profiles/<%=user._id %>/show">PROFILE</a>
+                <a href="/logout">LOG OUT</a>
+            <% } else { %>
+                <a href="/auth/google" class="login">LOG IN&nbsp;<img class="google" src="https://i.imgur.com/FHjYyi0.png"></a>
+            <% } %>
+        </div>
         <div class="search-bar">
             <form action="/search" method="GET">
                 <input type="text" name="query" placeholder="Search JoystickJury...">
-                <button type="submit">Search</button>
+                <button type="submit" id="search-button">Search</button>
             </form>
         </div>
-    <% if (user) { %>
-        <a href="/logout">LOG OUT</a>
-        <a href="/profiles/<%=user._id %>/show">PROFILE</a>
-    <% } else { %>
-    <a href="/auth/google" class="login">LOG IN&nbsp;<img class="google" src="https://i.imgur.com/FHjYyi0.png"></a>
-  <% } %>
     </nav>
 
     <link rel="stylesheet" href="/stylesheets/style.css" />
