@@ -19,16 +19,22 @@
     <ul>
       <% if (game.reviews.length > 0) { %>
         <% game.reviews.forEach(review => { %>
-          <li>
-            <td class="review-user"><img alt="avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer" ><%= review.userName %></td>
+          <ul>
+            <td class="review-user"><img alt="avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer" ><%= review.userName %></td> 
+            <% if (user && review.user) { %>
+              <p>Currently Playing...<%= review.user.status|| 'No Status Yet' %></p>
+            <% } %>
             <h3><%= review.title %></h3>
             <p>Rating: <%= review.rating %></p>
             <p><%= review.content %></p>
+            
              
-          </li>
-            <% if (user) { %>
+          </ul>
+
+          
+            <% if (user && review.user && user._id.equals(review.user._id)) { %>
               <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
-                <button type="submit">X</button>
+                <button type="submit">Delete Review</button>
               </form>
             <% } %>
         <% }) %> 
