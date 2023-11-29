@@ -1,15 +1,16 @@
-<%- include('../partials/newsheader') %>
+<%- include('../partials/blankheader') %>
 
 <table id="index" border="1">
- <h1>All Games</h1> 
+ <h2>All Games</h2> 
   <tr>
-    <th></th>
-    <th>Title</th>
-    <th>Genre</th>
-    <th>Platform</th>
-    <th>Release Date</th>
-    <th>ESRB Rating</th>
-    <th>Details</th>
+    <th id="titles">
+    <th style="color: white">Title</th>
+    <th style="color: white">Genre</th>
+    <th style="color: white">Platform</th>
+    <th style="color: white">Release Date</th>
+    <th style="color: white">ESRB Rating</th>
+    <th style="color: white">Details</th>
+  </th>
   </tr>
   <% games.forEach(game => { %>
   <tr>
@@ -18,12 +19,12 @@
       <img src="<%= game.imageUrl %>" alt="Videogame Image" />
       <% } %>
     </td>
-    <td><%= game.title %></td>
-    <td><%= game.genre %></td>
-    <td><%= game.platform %></td>
-    <td><%= game.released.toLocaleDateString() %></td>
-    <td><%= game.ESRB %></td>
-    <td><a href="/videogames/<%= game._id %>">Details</a></td>
+    <td style="color: white"><%= game.title %></td>
+    <td style="color: white"><%= game.genre %></td>
+    <td style="color: white"><%= game.platform %></td>
+    <td style="color: white"><%= game.released.toLocaleDateString() %></td>
+    <td style="color: white"><%= game.ESRB %></td>
+    <td style="color: white"><div id="details"><a href="/videogames/<%= game._id %>">Details</a></div></td>
   </tr>
   <% }) %>
 </table>

@@ -4,6 +4,11 @@
 <p>Rating: <%= review.rating %></p>
 <p>Content: <%= review.content %></p>
 
+<% if (user) { %>
+    <p>User Status: <%= user.status %></p>
+  <% } else { %>
+    <p>User Status: Guest</p>
+  <% } %>
 
 
 <%- include('../partials/footer') %>

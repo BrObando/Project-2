@@ -1,6 +1,7 @@
 <%- include('../partials/blankheader') %>
 
     <center> <h1>Game</h1>
+
     <div>
       <% if (game.imageUrl) { %>
         <img src="<%= game.imageUrl %>" alt="Videogame Image" />
@@ -14,21 +15,28 @@
     </div> </center>
 
 <center>
-   <h2>Reviews</h2>
+  
+   <h3>Reviews</h3>
   
     <ul>
       <% if (game.reviews.length > 0) { %>
         <% game.reviews.forEach(review => { %>
-          <li>
-            <td class="review-user"><img alt="avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer" ><%= review.userName %></td>
+          <ul>
+            <td class="review-user"><img alt="avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer" ><%= review.userName %></td> 
+            <% if (user && review.user ) { %>
+              <p>Currently Playing...<%= review.user.status|| 'No Status Yet' %></p>
+            <% } %>
             <h3><%= review.title %></h3>
             <p>Rating: <%= review.rating %></p>
             <p><%= review.content %></p>
+            
              
-          </li>
-            <% if (user) { %>
+          </ul>
+
+          
+            <% if (user && review.user && user._id.equals(review.user._id)) { %>
               <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
-                <button type="submit">X</button>
+                <button type="submit">Delete Review</button>
               </form>
             <% } %>
         <% }) %> 
@@ -38,15 +46,17 @@
       <% if (user) { %>
       
       <!-- new review link -->
+      
+    
       <a href="/reviews/videogames/<%= game._id %>/reviews/new">Add a Review</a>
+      
       <% } %> 
     </ul>
 
     
 
- 
 
-   
+
 </body>
 </html>
 </center>

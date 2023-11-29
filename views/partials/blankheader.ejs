@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>JoyStick Jury</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Montserrat:wght@100&family=Roboto&display=swap" rel="stylesheet">
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 <link href="recent-news-boxes.css" rel="stylesheet/style.css">
@@ -13,20 +17,21 @@
 
 </head>
 <body>
-    
     <nav class="navbar">
+        <div class="profile-logout-container">
+            <% if (user) { %>
+                <a href="/profiles/<%=user._id %>/show">PROFILE</a>
+                <a href="/logout">LOG OUT</a>
+            <% } else { %>
+                <a href="/auth/google" class="login">LOG IN&nbsp;<img class="google" src="https://i.imgur.com/FHjYyi0.png"></a>
+            <% } %>
+        </div>
         <div class="search-bar">
             <form action="/search" method="GET">
                 <input type="text" name="query" placeholder="Search JoystickJury...">
-                <button type="submit">Search</button>
+                <button type="submit" id="search-button">Search</button>
             </form>
         </div>
-    <% if (user) { %>
-        <a href="/logout">LOG OUT</a>
-        <a href="/profiles/<%=user._id %>">Profile</a>
-    <% } else { %>
-    <a href="/auth/google" class="login">LOG IN&nbsp;<img class="google" src="https://i.imgur.com/FHjYyi0.png"></a>
-  <% } %>
     </nav>
 
     <link rel="stylesheet" href="/stylesheets/style.css" />
@@ -36,8 +41,6 @@
 <body>
     <center><nav class="jurycon">
         <a href="/">Home</a> |
-        <a href="/">Reviews</a> |
-        <a href="/">Features</a> |
         <a href="/blogs/index">Blog</a> |
         <a href="/news">Gamer News</a> |
         <a href="/videogames">Game Index</a> 

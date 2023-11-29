@@ -8,6 +8,9 @@
 </head>
 
 <body>
+    <div id="reviewModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
 <form action="/reviews/videogames/<%= game.id %>/reviews" method="POST">
     <label for="title">Title:</label>
     <input type="text" id="title" name="title" required>
@@ -20,8 +23,34 @@
     <br>
     <button type="submit">Submit Review</button>
   </form>
+</div>
+</div>
+<script>
+    const modal = document.getElementById('reviewModal');
+    const closeModalButton = document.getElementsByClassName('close')[0];
 
-  <a href="/videogames/<%= game._id %>">Back to Game Details</a>
-  </body>
+    function openModal() {
+      modal.style.display = 'block';
+    }
+  
+    
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+  
+    
+    window.onload = openModal;
+  
+    
+    closeModalButton.onclick = closeModal;
+  
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        closeModal();
+      }
+    };
+  </script>   
+
+</body>
 
   <%- include('../partials/footer') %>

@@ -33,6 +33,14 @@ async function createReview(req, res) {
       username: req.user.name
     };
 
+ 
+ const userStatus = req.user.status;
+
+ 
+ if (userStatus) {
+   review.userStatus = userStatus;
+ }
+ 
 
 console.log("body",req.body)
 console.log("user",req.user)
