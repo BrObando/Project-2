@@ -227,6 +227,7 @@ hr.rounded {
 /*BLOG CSS*/
 #blog-post {
   padding: 0 0 5px 0;
+  color: #ffffff70;
 }
 
 #blog-details {
@@ -275,8 +276,10 @@ hr.rounded {
 
 .profile-logout-container a {
   color: white;
+  font-family: "Audiowide", sans-serif;
   text-decoration: none;
   margin-right: 10px;
+  border-radius: 15px;
 }
 
 .profile-logout-container a:hover {
@@ -301,6 +304,8 @@ hr.rounded {
 
 #search-button {
   color: white;
+  font-family: "Audiowide", sans-serif;
+  border-radius: 15px;
   background-color: #009de4;
   border: 2px solid white;
   padding: 8px 8px;
