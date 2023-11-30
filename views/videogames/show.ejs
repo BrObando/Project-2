@@ -2,17 +2,18 @@
 
     <center> 
 
-    <div>
+    <div class="game-info">
       <% if (game.imageUrl && game.videoUrl) { %>
         <img src="<%= game.imageUrl %>" alt="Videogame Image" />
+        <br>
+        <h2><%= game.title %></h2>
+        <p><strong>Genre: </strong><%= game.genre %></p>
+        <p><strong>Platform:</strong> <%= game.platform %></p>
+        <p><strong> Date:</strong> <%= game.released.toDateString() %></p>
+        <p><strong>ESRB Rating:</strong> <%= game.ESRB %></p>
+        <br>
         <iframe width="560" height="315" src="<%= game.videoUrl %>" frameborder="0" allowfullscreen></iframe>
       <% } %>
-        <h2><%= game.title %></h2>
-        <p>Genre: <%= game.genre %></p>
-        <p>Platform: <%= game.platform %></p>
-        <p>Release Date: <%= game.released.toDateString() %></p>
-        <p>ESRB Rating: <%= game.ESRB %></p>
-        
     </div> </center>
 
 <center>

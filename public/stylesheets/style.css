@@ -30,6 +30,11 @@ h3 {
   color: #b933ff;
 }
 
+h4 {
+  font-family: "Audiowide", sans-serif;
+  color: #ffffffda;
+}
+
 header {
   background-repeat: no-repeat;
 }
@@ -324,4 +329,8 @@ hr.rounded {
   border: 6px solid #b933ff;
   background-color: #b933ff;
   color: white;
+}
+
+.game-info {
+  color: #ffffffda;
 }
