@@ -26,12 +26,8 @@
             <td class="review-user"><img class="avatar" alt="avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer" ><%= review.userName %></td> 
             <h3 class="review-title"><%= review.title %></h3>
               <p class = "user-status">Currently Playing...<%= review.user && review.user.status ? review.user.status : 'No Status Yet' %></p>
-            
-            
-            <p class="review-rating">Rating: <%= review.rating %> / 5</p>
-            <p class="review-content"><%= review.content %></p>
-            
-            
+              <p class="review-rating">Rating: <%= review.rating %> / 5</p>
+              <p class="review-content"><%= review.content %></p>
           </ul>
             <% if (user && review.user && user._id.equals(review.user._id)) { %>
               <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
@@ -43,20 +39,10 @@
         <p>No reviews available for this game.</p>
       <% } %>
       <% if (user) { %>
-      
-
-      
-    
       <a href="/reviews/videogames/<%= game._id %>/reviews/new" class="add-review-link">Add a Review</a>
-      
       <% } %> 
-
       <% if (!user) { %>
-      
-
-      
         <a href="/reviews/videogames/<%= game._id %>/reviews/new" class="add-review-link">Add a Review</a>
-        
         <% } %> 
     </ul>
 </body>
