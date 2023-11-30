@@ -32,11 +32,14 @@ h3 {
 
 h4 {
   font-family: "Audiowide", sans-serif;
-  color: #ffffffda;
 }
 
 header {
   background-repeat: no-repeat;
+}
+
+p {
+  color:#ffffffda;
 }
 
 /*LOGO STYLE*/
@@ -223,6 +226,7 @@ hr.rounded {
 
 #blog-details {
   padding: 0 0 5px 0;
+  color:#ffffffda
 }
 
 #blog-image {
