@@ -1,20 +1,62 @@
 <%- include('../partials/header') %>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User Profile</title>
-  </head>
-  <body>
-    <div id="profile-info">
-      <h1>Profile</h1>
-      <p>Welcome, <%= user.name%>!</p>
-      <p>Currently Playing...<%= user.status || 'No status set' %></p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+</head>
+<body>
+  <div id="profile-info">
+    <button id="closeButton" onclick="closeProfile()">X</button>
+  <h3>Profile</h3>
+  <p>Welcome, <%= user.name%>!</p>
+  <p style="font-size: 14px; color: rgb(235, 56, 182) ">Currently Playing... <%= user.status || 'No status set' %></p>
+  <a href="/profiles/edit" class="edit-status" >Edit Status</a>
+</div>
+</body>
 
-      <a href="/profiles/edit">Edit Status</a>
-    </div>
-  </body>
+<style>
+  #profile-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #070000;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000; 
+}
+
+#closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #009de4; 
+  font-size: 10px; 
+  opacity: 1;
+}
+
+.edit-status{
+  display: inline-block;
+  background-color: #009DE4;
+  color: #fff;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+</style>
+
+<script>
+  function closeProfile() {
+    document.getElementById('profile-info').style.display = 'none';
+  }
+</script>
+
 </html>
 
 <%- include('../partials/footer') %>
