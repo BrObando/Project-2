@@ -9,7 +9,7 @@ module.exports = {
 }
 async function index(req, res) {
     try {
-        const allGames = await Game.find();
+        const allGames = await Game.find().sort({ title: 'asc' });;
         res.render('videogames/index', { title: "All Games", games: allGames });
     } catch (err) {
         console.error(err);
