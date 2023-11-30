@@ -14,16 +14,11 @@ async function updateProfile(req, res) {
         const userId = req.user._id;
         const profileId = req.params.id;
         const status = req.body; 
-      // console.log(status)
-      // const trueUser = await User.findById(profileId)
-      // console.log(trueUser)
-      // const epicUser = await Profile.findOne({username: trueUser.name})
-      // console.log(epicUser)
-    const user = await User.findByIdAndUpdate(profileId, status, {new: true} ) 
-  //  console.log(profileId)
-  // await User.findByIdAndUpdate(userId, status, {new: true} )// new tru - update // status - takes the info to update 
-  res.redirect(`/profiles/${profileId}`);
-  // res.render('profiles/edit', { profile: updatedProfile });
+      
+    const user = await User.findByIdAndUpdate(profileId, status, {new: true} ).then(result => console.log(result))
+ 
+  res.redirect(`/profiles/${profileId}/show`);
+  
   
       
     } catch (error) {
@@ -46,11 +41,10 @@ async function showProfile(req, res) {
 async function editProfile(req, res) {
   const profileId = req.params.id;
 
-  // const {status} = req.body; 
   try {
       const profile = await Profile.findById(profileId)
       res.render('profiles/edit', { profile, editProfile });
-      // await profile.save();
+      
   }
   
   catch (err) {
