@@ -20,6 +20,8 @@ passport.use(new GoogleStrategy(
         // A user has logged in with OAuth...
         let user = await User.findOne({ googleId: profile.id });
         // Existing user found, so provide it to passport
+
+      
         if (user) return cb(null, user);
 
         const newProfile = new Profile({
