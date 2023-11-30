@@ -11,7 +11,7 @@ html {
 
 body {
   background-color: black;
-  border: 4px solid #009DE4;
+  border: 4px solid #009de4;
   border-radius: 25px;
   display: table;
   padding: 20px;
@@ -20,18 +20,10 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
- /* h1 {
-  font-family: 'Audiowide', sans-serif;
-  color: #009DE4;
-  
-
-}  */
-
 h2 {
-  font-family: 'Audiowide', sans-serif;
-  color: #009DE4;
-
-} 
+  font-family: "Audiowide", sans-serif;
+  color: #009de4;
+}
 
 h3 {
   font-family: "Audiowide", sans-serif;
@@ -40,12 +32,10 @@ h3 {
 
 header {
   background-repeat: no-repeat;
-  /* padding: 10px; */
 }
 
-/* Logo styles */
+/*LOGO STYLE*/
 .logo {
-  /* max-width: 100px; */
   background-position: center;
   height: 50%;
 }
@@ -60,12 +50,11 @@ header {
   width: 33.33%;
 }
 
-
 .jurycon {
   font-weight: 700;
   display: block;
   line-height: 2;
-  font-family: 'Audiowide', sans-serif;
+  font-family: "Audiowide", sans-serif;
 }
 
 .jurycon a {
@@ -166,16 +155,16 @@ header {
 }
 
 .genres {
-  font-family: 'Audiowide', sans-serif;
+  font-family: "Audiowide", sans-serif;
   font-size: 35px;
 }
 
 .genres a:link {
-  color: #009DE4;
+  color: #009de4;
 }
 
 .genres a:hover {
-  color: #B933FF
+  color: #b933ff;
 }
 
 .genres a:visited {
@@ -197,9 +186,7 @@ hr.rounded {
   font-family: "Lato", sans-serif;
   font-size: 20px;
   float: left;
-  /* border-color: #009DE4; */
   border-width: 5px;
-    
 }
 
 #details a:link {
@@ -207,11 +194,11 @@ hr.rounded {
 }
 
 #details a:visited {
-  color: #B933FF;
+  color: #b933ff;
 }
 
 #details a:hover {
-  color: #009DE4;
+  color: #009de4;
 }
 
 @media screen and (max-width: 600px) {
@@ -226,6 +213,7 @@ hr.rounded {
 /*BLOG CSS*/
 #blog-post {
   padding: 0 0 5px 0;
+  color: #ffffffda;
 }
 
 #blog-details {
@@ -233,7 +221,6 @@ hr.rounded {
 }
 
 #blog-image {
-  /*border: 4px solid green;*/
   max-width: fit-content;
   width: auto;
   height: auto;
@@ -257,14 +244,14 @@ hr.rounded {
 
 /* NAVBAR CSS */
 .navbar {
-  background-color: #B933FF;
+  background-color: #b933ff;
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 10px;
   border-radius: 15px;
   box-sizing: border-box;
-  border: 2px solid #009DE4;
+  border: 2px solid #009de4;
 }
 
 .profile-logout-container {
@@ -274,6 +261,8 @@ hr.rounded {
 
 .profile-logout-container a {
   color: white;
+  font-family: "Audiowide", sans-serif;
+  border-radius: 15px;
   text-decoration: none;
   margin-right: 10px;
 }
@@ -300,6 +289,8 @@ hr.rounded {
 
 #search-button {
   color: white;
+  font-family: "Audiowide", sans-serif;
+  border-radius: 15px;
   background-color: #009de4;
   border: 2px solid white;
   padding: 8px 8px;
@@ -316,7 +307,6 @@ hr.rounded {
 }
 
 /* VIDEOGAME INDEX PAGE */
-
 #game-grid {
   display: flex;
   flex-wrap: wrap;
