@@ -1,19 +1,63 @@
 <%- include('../partials/header') %>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit Profile</title>
-  </head>
-  <body>
-    <h1>Edit Profile</h1>
-    <form action="/profiles/<%= user._id %>/edit?_method=PUT" method="POST">
-      <label for="status">Currently playing...</label>
-      <input type="text" id="status" name="status" value="<%= user.status %>" />
-      <button type="submit">Save Changes</button>
-    </form>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Profile</title>
+</head>
+<body>
+  <div id="profile-edit-box">
+  <h3>Edit Status</h3>
+  <button id="closeButton" onclick="closeProfile()">X</button>
+  <form action="/profiles/<%= user._id %>/edit?_method=PUT" method="POST">
+    <label for="status" style="font-size: 16px; color: rgb(235, 56, 182)">Currently playing...</label>
+    <input style="color: black" type="text" id="status" name="status" value="<%= user.status %>">
+    <button type="submit" class="save-btn" >Save Changes </button>
+  </form>
+</div>
+</body>
+<style>
+#profile-edit-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #070000;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000; 
+}
+#closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #009de4; 
+  font-size: 10px; 
+  opacity: 1;
+}
+#closeButon:hover {
+  color: black;
+  background-color: #009de4; 
+}
+.save-btn{
+  display: inline-block;
+  background-color: #009DE4;
+  color: #fff;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+</style>
+<script>
+  function closeProfile() {
+    document.getElementById('profile-edit-box').style.display = 'none';
+  }
+</script>
 </html>
 
 <%- include('../partials/footer') %>
