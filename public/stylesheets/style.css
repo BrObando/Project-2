@@ -30,8 +30,16 @@ h3 {
   color: #b933ff;
 }
 
+h4 {
+  color: #ffffffda
+}
+
 header {
   background-repeat: no-repeat;
+}
+
+p {
+  color:#ffffffda;
 }
 
 /*LOGO STYLE*/
@@ -218,6 +226,7 @@ hr.rounded {
 
 #blog-details {
   padding: 0 0 5px 0;
+  color:#ffffffda
 }
 
 #blog-image {
