@@ -1,19 +1,19 @@
 <%- include('../partials/header') %>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edit Profile</title>
-</head>
-<body>
-  <h1>Edit Profile</h1>
-  <form action="/profiles/<%= user._id %>/edit?_method=PUT" method="POST">
-    <label for="status">Currently playing...</label>
-    <input type="text" id="status" name="status" value="<%= user.status %>">
-    <button type="submit">Save Changes</button>
-  </form>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profile</title>
+  </head>
+  <body>
+    <h1>Edit Profile</h1>
+    <form action="/profiles/<%= user._id %>/edit?_method=PUT" method="POST">
+      <label for="status">Currently playing...</label>
+      <input type="text" id="status" name="status" value="<%= user.status %>" />
+      <button type="submit">Save Changes</button>
+    </form>
+  </body>
 </html>
 
 <%- include('../partials/footer') %>

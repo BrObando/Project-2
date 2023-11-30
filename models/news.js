@@ -1,7 +1,7 @@
 const myNews = [];
 
 module.exports = {
-    create: function (data) {
-        myNews.push(data);
-    },
+  create: function (data) {
+    myNews.push(data);
+  },
 };
