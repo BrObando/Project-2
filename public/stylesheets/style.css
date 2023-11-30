@@ -31,7 +31,7 @@ h3 {
 }
 
 h4 {
-  color: #ffffffda
+  font-family: "Audiowide", sans-serif;
 }
 
 header {
@@ -274,6 +274,7 @@ hr.rounded {
   border-radius: 15px;
   text-decoration: none;
   margin-right: 10px;
+  border-radius: 15px;
 }
 
 .profile-logout-container a:hover {
@@ -332,4 +333,8 @@ hr.rounded {
   border: 6px solid #b933ff;
   background-color: #b933ff;
   color: white;
+}
+
+.game-info {
+  color: #ffffffda;
 }
