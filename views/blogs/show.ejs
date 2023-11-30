@@ -3,7 +3,8 @@
 <div id="blog-details">
   <h2><%= blog.title %></h2>
   <h5>
-   <strong>Written By: <%= blog.author %> </strong> <%= blog.createdAt.toLocaleDateString() %>
+    <strong>Written By: <%= blog.author %> </strong> <%=
+    blog.createdAt.toLocaleDateString() %>
   </h5>
 
   <div id="blog-image">
