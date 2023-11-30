@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 
 const profileSchema = new Schema ({
     username : { type: String, unique: true},
-    user: {type: Schema.Types.ObjectId, ref: 'User' },
+    user: {type: Schema.Types.ObjectId, ref: 'User', required: true},
     status: {type: String},
 
 }, {
@@ -13,3 +13,7 @@ const profileSchema = new Schema ({
   });
 
   module.exports = mongoose.model('Profile', profileSchema);
+
+
+
+  //delete
