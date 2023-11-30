@@ -1,17 +1,18 @@
 <%- include('../partials/blankheader') %>
 
-    <center> <h1>Game</h1>
+    <center> 
 
     <div>
-      <% if (game.imageUrl) { %>
+      <% if (game.imageUrl && game.videoUrl) { %>
         <img src="<%= game.imageUrl %>" alt="Videogame Image" />
+        <iframe width="560" height="315" src="<%= game.videoUrl %>" frameborder="0" allowfullscreen></iframe>
       <% } %>
         <h2><%= game.title %></h2>
         <p>Genre: <%= game.genre %></p>
         <p>Platform: <%= game.platform %></p>
         <p>Release Date: <%= game.released.toDateString() %></p>
         <p>ESRB Rating: <%= game.ESRB %></p>
-        <a href="/">Back to Homepage</a>
+        
     </div> </center>
 
 <center>
@@ -21,22 +22,20 @@
     <ul>
       <% if (game.reviews.length > 0) { %>
         <% game.reviews.forEach(review => { %>
-          <ul>
+          <ul class="review">
             <td class="review-user"><img alt="avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer" ><%= review.userName %></td> 
-            <% if (user && review.user ) { %>
-              <p>Currently Playing...<%= review.user.status|| 'No Status Yet' %></p>
-            <% } %>
-            <h3><%= review.title %></h3>
-            <p>Rating: <%= review.rating %></p>
-            <p><%= review.content %></p>
+            <h3 class="review-title"><%= review.title %></h3>
+              <p class = "user-status">Currently Playing...<%= review.user && review.user.status ? review.user.status : 'No Status Yet' %></p>
             
-             
+            
+            <p class="review-rating">Rating: <%= review.rating %> / 5</p>
+            <p class="review-content"><%= review.content %></p>
+            
+            
           </ul>
-
-          
             <% if (user && review.user && user._id.equals(review.user._id)) { %>
               <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
-                <button type="submit">Delete Review</button>
+                <button type="submit" class="delete-review-btn">Delete Review</button>
               </form>
             <% } %>
         <% }) %> 
@@ -48,16 +47,88 @@
       <!-- new review link -->
       
     
-      <a href="/reviews/videogames/<%= game._id %>/reviews/new">Add a Review</a>
+      <a href="/reviews/videogames/<%= game._id %>/reviews/new" class="add-review-link">Add a Review</a>
       
       <% } %> 
+
+      <% if (!user) { %>
+      
+        <!-- new review link - redirects to loggin and creating a profile -->
+      
+        <a href="/reviews/videogames/<%= game._id %>/reviews/new" class="add-review-link">Add a Review</a>
+        
+        <% } %> 
     </ul>
-
-    
-
-
-
 </body>
+
+<style>
+ 
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .review {
+    background-color: #0a0101;
+    border: 3px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+
+  .review-user img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .review-title {
+    color:  #B933FF;
+    margin-top: 0;
+  }
+.user-status{
+  margin-bottom: 10px;
+  color: rgb(235, 56, 182);
+}
+  .review-content {
+    margin-bottom: 10px;
+    color: white;
+  }
+
+  .review-rating {
+    font-weight: bold;
+    color: #73edbe;
+  }
+
+  .delete-review-btn {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .delete-review-btn:hover {
+    background-color: #c82333;
+  }
+
+  .add-review-link {
+    display: inline-block;
+    background-color: #009DE4;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+
+  .add-review-link:hover {
+    background-color: #009DE4;
+  }
+</style>
 </html>
 </center>
 
