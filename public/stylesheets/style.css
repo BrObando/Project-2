@@ -5,18 +5,17 @@ html {
   padding: 20px;
   align-items: center;
   flex-direction: column;
-
   width: 100vw;
   height: 100vh;
 }
 
 body {
-  background-color: #fce25e;
+  background-color: black;
+  border: 4px solid #009DE4;
   border-radius: 25px;
   display: table;
-  border: 2px solid #fff;
   padding: 20px;
-  width: 300px;
+  width: 400px;
   height: 150px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -185,7 +184,7 @@ header {
 }
 
 hr.dotted {
-  border-top: 8px dotted #fff;
+  border-top: 7px dotted #fff;
 }
 
 hr.rounded {
@@ -246,19 +245,6 @@ hr.rounded {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-}
-
-.game-container {
-  flex: 0 0 calc(33.33% - 20px);
-  margin: 10px;
-  text-align: center;
-  position: relative;
-}
-
-.game-container:hover {
-  border: 6px solid #b933ff;
-  background-color: #b933ff;
-  color: white;
 }
 
 .image-container {
@@ -328,4 +314,24 @@ hr.rounded {
   text-decoration: none;
   font-size: 16px;
   padding: 4px 8px;
+}
+
+/* VIDEOGAME INDEX PAGE */
+
+#game-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.game-container {
+  flex: 0 0 calc(33.33% - 20px);
+  margin: 10px;
+  text-align: center;
+}
+
+.game-container:hover {
+  border: 6px solid #b933ff;
+  background-color: #b933ff;
+  color: white;
 }

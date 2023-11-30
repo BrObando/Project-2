@@ -9,7 +9,7 @@ module.exports = {
 }
 async function index(req, res) {
     try {
-        const allGames = await Game.find();
+        const allGames = await Game.find().sort({ title: 'asc' });;
         res.render('videogames/index', { title: "All Games", games: allGames });
     } catch (err) {
         console.error(err);
@@ -30,7 +30,8 @@ function newGame(req, res) {
 }
 async function show(req, res) {
     try {
-        const game = await Game.findById(req.params.id);
+        const game = await Game.findById(req.params.id).populate({path: "reviews", populate:{path: "user", model: "User"}});
+        console.log(game)
         res.render('videogames/show', { title: "Game Details", game });
     } catch (err) {
         console.error(err);

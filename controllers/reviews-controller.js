@@ -20,7 +20,6 @@ async function newReview(req, res) {
 }
 
 async function createReview(req, res) {
-  // console.log(req.body)
   try {
     const game = await Game.findById(req.params.id);
     const review = {
@@ -82,10 +81,6 @@ async function deleteReview(req, res) {
     const game = await Game.findOne({"reviews._id": reviewId})
     game.reviews.remove(reviewId)
     await game.save()
-
-
-     
-   
 
     res.redirect(`/videogames/${game._id}`);
   } catch (err) {
