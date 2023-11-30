@@ -3,8 +3,6 @@ const router = express.Router();
 
 const blogCtrl = require("../controllers/blogs-controller");
 
-
-
 router.get("/index", blogCtrl.blogIndex);
 router.get("/new", blogCtrl.newBlog);
 

@@ -2,14 +2,14 @@
 <center><h2>Game Index</h2></center>
 <div id="game-grid">
   <% games.forEach(game => { %>
-    <div class="game-container">
-      <% if (game.imageUrl) { %>
-        <a href="/videogames/<%= game._id %>">
-          <img src="<%= game.imageUrl %>" alt="Videogame Image" />
-        </a>
-      <% } %>
-      <br />
-      <h4><%= game.title %></h4>
-    </div>
+  <div class="game-container">
+    <% if (game.imageUrl) { %>
+    <a href="/videogames/<%= game._id %>">
+      <img src="<%= game.imageUrl %>" alt="Videogame Image" />
+    </a>
+    <% } %>
+    <br />
+    <h4><%= game.title %></h4>
+  </div>
   <% }) %>
 </div>

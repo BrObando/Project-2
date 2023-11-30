@@ -4,17 +4,17 @@
 <div id="search-results">
   <ul>
     <% searchResults.forEach(result => { %>
-        <div class="game-container">
-          <% if (result.imageUrl) { %>
-            <a href="/videogames/<%= result._id %>" class="image-container">
-              <img src="<%= result.imageUrl %>" alt="<%= result.title %> Image" />
-            </a>
-          <% } else { %>
-            <p>No Image</p>
-          <% } %>
-          <br />
-          <h4><%= result.title %></h4>
-        </div>
+    <div class="game-container">
+      <% if (result.imageUrl) { %>
+      <a href="/videogames/<%= result._id %>" class="image-container">
+        <img src="<%= result.imageUrl %>" alt="<%= result.title %> Image" />
+      </a>
+      <% } else { %>
+      <p>No Image</p>
+      <% } %>
+      <br />
+      <h4><%= result.title %></h4>
+    </div>
     <% }) %>
   </ul>
 </div>
