@@ -25,7 +25,7 @@
           <ul>
             <td class="review-user"><img alt="avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer" ><%= review.userName %></td> 
             <h3><%= review.title %></h3>
-              <p>Currently Playing...<%= review.user.status || 'No Status Yet' %></p>
+              <p>Currently Playing...<%= review.user && review.user.status ? review.user.status : 'No Status Yet' %></p>
             
             
             <p>Rating: <%= review.rating %></p>
