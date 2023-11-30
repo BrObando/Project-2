@@ -26,12 +26,8 @@
             <td class="review-user"><img class="avatar" alt="avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer" ><%= review.userName %></td> 
             <h3 class="review-title"><%= review.title %></h3>
               <p class = "user-status">Currently Playing...<%= review.user && review.user.status ? review.user.status : 'No Status Yet' %></p>
-            
-            
-            <p class="review-rating">Rating: <%= review.rating %> / 5</p>
-            <p class="review-content"><%= review.content %></p>
-            
-            
+              <p class="review-rating">Rating: <%= review.rating %> / 5</p>
+              <p class="review-content"><%= review.content %></p>
           </ul>
             <% if (user && review.user && user._id.equals(review.user._id)) { %>
               <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
@@ -43,20 +39,10 @@
         <p>No reviews available for this game.</p>
       <% } %>
       <% if (user) { %>
-      
-
-      
-    
       <a href="/reviews/videogames/<%= game._id %>/reviews/new" class="add-review-link">Add a Review</a>
-      
       <% } %> 
-
       <% if (!user) { %>
-      
-
-      
         <a href="/reviews/videogames/<%= game._id %>/reviews/new" class="add-review-link">Add a Review</a>
-        
         <% } %> 
     </ul>
 </body>
@@ -64,78 +50,74 @@
 <style>
  
 
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  .game-content {
-    margin-bottom: 10px;
-    color: white;
-  }
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+.game-content {
+  margin-bottom: 10px;
+  color: white;
+}
 .game-image {
- 
   margin-bottom: 10px;
 }
-  .review {
-    background-color: #0a0101;
-    border: 3px solid #ddd;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-  }
-
-  .avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-
-  .review-title {
-    color:  #B933FF;
-    margin-top: 0;
-  }
+.review {
+  background-color: #0a0101;
+  border: 3px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.review-title {
+  color:  #B933FF;
+  margin-top: 0;
+}
 .user-status{
   margin-bottom: 10px;
   color: rgb(235, 56, 182);
-  
 }
-  .review-content {
-    margin-bottom: 10px;
-    color: white;
-  }
+.review-content {
+  margin-bottom: 10px;
+  color: white;
+}
 
-  .review-rating {
-    font-weight: bold;
-    color: #73edbe;
-  }
+.review-rating {
+  font-weight: bold;
+  color: #73edbe;
+}
 
-  .delete-review-btn {
-    background-color: #dc3545;
-    color: #fff;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-  }
+.delete-review-btn {
+  background-color: #dc3545;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
 
-  .delete-review-btn:hover {
-    background-color: #c82333;
-  }
+.delete-review-btn:hover {
+  background-color: #c82333;
+}
 
-  .add-review-link {
-    display: inline-block;
-    background-color: #009DE4;
-    color: #fff;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-  }
+.add-review-link {
+  display: inline-block;
+  background-color: #009DE4;
+  color: #fff;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
 
-  .add-review-link:hover {
-    background-color: #009DE4;
-  }
+.add-review-link:hover {
+  background-color: #009DE4;
+}
 </style>
 </html>
 </center>
