@@ -1,7 +1,4 @@
-
-const Game = require('../models/videogame-model');
-// const Review = require('../models/videogame-model');
-
+const Game = require("../models/videogame-model");
 
 module.exports = {
   newReview,
@@ -11,12 +8,16 @@ module.exports = {
 };
 
 async function newReview(req, res) {
-  try{
-  const game = await Game.findById(req.params.id);
-  res.render('reviews/new', { title: "Add Game Review", game,  gameId: req.params.id });
+  try {
+    const game = await Game.findById(req.params.id);
+    res.render("reviews/new", {
+      title: "Add Game Review",
+      game,
+      gameId: req.params.id,
+    });
   } catch (err) {
     console.error(err);
-}
+  }
 }
 
 async function createReview(req, res) {
@@ -28,29 +29,26 @@ async function createReview(req, res) {
       content: req.body.content,
       game: game._id,
       user: req.user,
-      userAvatar: req.user.avatar, 
-      username: req.user.name
+      userAvatar: req.user.avatar,
+      username: req.user.name,
     };
 
- 
- const userStatus = req.user.status;
+    const userStatus = req.user.status;
 
- 
- if (userStatus) {
-   review.userStatus = userStatus;
- }
- 
+    if (userStatus) {
+      review.userStatus = userStatus;
+    }
 
-console.log("body",req.body)
-console.log("user",req.user)
-   
+    console.log("body", req.body);
+    console.log("user", req.user);
+
     game.reviews.push(review);
-    console.log(game)
+    console.log(game);
     await game.save();
 
     res.redirect(`/videogames/${req.params.id}`);
   } catch (err) {
-    console.error(err); 
+    console.error(err);
   }
 }
 
@@ -61,15 +59,21 @@ async function showReview(req, res) {
     const game = await Game.findById(gameId);
 
     if (!game) {
-      return res.status(404).send('nope');
+      return res.status(404).send("nope");
     }
     const review = await Review.findById(reviewId);
 
     if (!review) {
-      return res.status(404).send('Review not found');
+      return res.status(404).send("Review not found");
     }
-    const userIsReviewOwner = req.isAuthenticated() && req.user.equals(review.user);
-    res.render('reviews/show', { title: 'Review Details', game, review, userIsReviewOwner });
+    const userIsReviewOwner =
+      req.isAuthenticated() && req.user.equals(review.user);
+    res.render("reviews/show", {
+      title: "Review Details",
+      game,
+      review,
+      userIsReviewOwner,
+    });
   } catch (err) {
     console.error(err);
   }
@@ -78,9 +82,9 @@ async function showReview(req, res) {
 async function deleteReview(req, res) {
   try {
     const reviewId = req.params.reviewId;
-    const game = await Game.findOne({"reviews._id": reviewId})
-    game.reviews.remove(reviewId)
-    await game.save()
+    const game = await Game.findOne({ "reviews._id": reviewId });
+    game.reviews.remove(reviewId);
+    await game.save();
 
     res.redirect(`/videogames/${game._id}`);
   } catch (err) {

@@ -1,9 +1,7 @@
-const router = require('express').Router()
+const router = require("express").Router();
 
-const apiController = require('../controllers/news-api')
+const apiController = require("../controllers/news-api");
 
-router.get('/news', apiController.index);
-
-//router.get('/news/:id', apiController.show);
+router.get("/news", apiController.index);
 
 module.exports = router;
