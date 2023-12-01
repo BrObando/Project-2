@@ -37,8 +37,13 @@
   </ul>
   
 <h1>Getting Started</h1>
-Click the link below and leave a review today!!
-https://joystick-jury-b3d4a6748f01.herokuapp.com/
+Click the link below and leave a review today!! 👉 https://joystick-jury-b3d4a6748f01.herokuapp.com/ </br>
+
+Simplified ERD model 👇 ![simplified ERD](https://github.com/BrObando/Project-2/assets/146975843/14fd5136-d1b5-4e16-8dfc-f1ca1c6676cf) </br>
+
+Full ERD model 👇 ![Full ERD](https://github.com/BrObando/Project-2/assets/146975843/ac393f68-74a4-48e5-a178-3bb40af1b4f7)
+
+
 
 
 <h1>Next Steps</h1>
