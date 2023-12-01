@@ -29,7 +29,7 @@
   </ul>
   
 <h1>Getting Started</h1>
-https://joystick-jury-cfcc386888a1.herokuapp.com/
+https://joystickjury-cba4cbca5106.herokuapp.com/
 
 
 <h1>Next Steps</h1>
