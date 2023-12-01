@@ -38,7 +38,7 @@
   
 <h1>Getting Started</h1>
 Click the link below and leave a review today!!
-https://js-jury-35d2b1dccc54.herokuapp.com/
+https://joystick-jury-b3d4a6748f01.herokuapp.com/
 
 
 <h1>Next Steps</h1>
