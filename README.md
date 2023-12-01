@@ -13,7 +13,15 @@
 
 <p align="center">Log-in or sign up today!</p>
 
-<h1>Screenshots</h1>
+<h1>Screenshots</h1> <h3>as of 12/1/2023</h3>
+
+![image (1)](https://github.com/BrObando/Project-2/assets/146975843/56375a65-f803-41b7-af70-a5796a155704)
+
+![image (3)](https://github.com/BrObando/Project-2/assets/146975843/5657520f-e97a-4876-bb3c-8c3ff54bc171)
+
+![joystickjury-cba4cbca5106-herokuapp-com-1024xFULLdesktop-ac4581](https://github.com/BrObando/Project-2/assets/146975843/d56a931d-80c0-49bc-9d8e-504fcf968b39)
+
+![joystickjury-cba4cbca5106-herokuapp-com-1024xFULLdesktop-04c861 (1)](https://github.com/BrObando/Project-2/assets/146975843/76a9292c-8597-44cb-8e8d-69ba01a0ed6e)
 
 <h1>Technologies Used</h1>
 <ul>
@@ -29,7 +37,8 @@
   </ul>
   
 <h1>Getting Started</h1>
-https://joystickjury-cba4cbca5106.herokuapp.com/
+Click the link below and leave a review today!!
+https://js-jury-35d2b1dccc54.herokuapp.com/
 
 
 <h1>Next Steps</h1>
