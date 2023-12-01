@@ -2,6 +2,7 @@
 <img src="https://github.com/BrObando/Project-2/assets/146975843/a5c19c9b-e611-4cd6-be6f-1eebf85a1975">
 </p>
 <p align="center"><b>Developers | OG Joystick Jury: Donielle Kinchen, Brianna Obando & Shelby Pagan</b></p>
+<h1 align="center">ORDER IN THE COURT!!! 👩‍⚖️</h1>
 <h2 align="center">This one’s for the ✨girlies✨</h2>
 </br>
 <p align="center">Welcome to Joystick Jury, a video game review site where you can discuss old and current video games & new releases!</p> 
